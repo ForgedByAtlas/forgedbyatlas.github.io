@@ -1,192 +1,119 @@
-import React from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    ScrollView,
-    StyleSheet,
-    useColorScheme,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
-import { ChevronLeft } from 'lucide-react-native';
-import Markdown from 'react-native-markdown-display';
-import { COLORS, FONT_FAMILY, SPACING, TEXT_STYLE } from '../constants/theme';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confyde Privacy Policy</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; margin-bottom: 8px; }
+p { margin: 12px 0; }
+a { color: #0066cc; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; font-size: 14px; color: #666; }
+</style>
+</head>
+<body>
 
-const PLACEHOLDER_BODY = `**Privacy Policy**
+<h1>Privacy Policy</h1>
 
-This privacy policy applies to the Confyde app (hereby referred to as "Application") for mobile devices that was created by Forged By Atlas (hereby referred to as "Service Provider") as a Commercial service.
+<p>This privacy policy applies to the Confyde app (hereby referred to as "Application") for mobile devices that was created by Forged By Atlas (hereby referred to as "Service Provider") as a Commercial service.</p>
 
-**Information Collection and Use**
+<h2>Information Collection and Use</h2>
 
-Confyde is built around a privacy-first principle: your journal entries stay on your device. The Service Provider does not operate any servers that store, log, or analyze your journal content, mood data, or usage patterns.
+<p>Confyde is built around a privacy-first principle: your journal entries stay on your device. The Service Provider does not operate any servers that store, log, or analyze your journal content, mood data, or usage patterns.</p>
 
-The Application stores the following data locally on your device:
-- Your journal entry text
-- Mood selections you assign to each entry
-- Entry dates and timestamps
-- Onboarding preferences (age range, gender identification, journaling experience) used to personalize your in-app experience
+<p>The Application stores the following data locally on your device:</p>
+<ul>
+<li>Your journal entry text</li>
+<li>Mood selections you assign to each entry</li>
+<li>Entry dates and timestamps</li>
+<li>Onboarding preferences (age range, gender identification, journaling experience) used to personalize your in-app experience</li>
+</ul>
 
-This data is stored exclusively in a local database on your device and is never transmitted to the Service Provider.
+<p>This data is stored exclusively in a local database on your device and is never transmitted to the Service Provider.</p>
 
-The Application does not collect:
-- Your name, email address, phone number, or other contact information
-- Your IP address
-- Your precise or approximate location
-- Advertising identifiers
+<p>The Application does not collect:</p>
+<ul>
+<li>Your name, email address, phone number, or other contact information</li>
+<li>Your IP address</li>
+<li>Your precise or approximate location</li>
+<li>Advertising identifiers</li>
+</ul>
 
-**AI Features**
+<h2>AI Features</h2>
 
-The Application offers optional AI-powered features (Weekly Reflection and Daily Deep Dive) that analyze your journal entries to surface emotional patterns and insights. When you actively request one of these features:
+<p>The Application offers optional AI-powered features (Weekly Reflection and Daily Deep Dive) that analyze your journal entries to surface emotional patterns and insights. When you actively request one of these features, the relevant journal entries from the requested timeframe are transmitted to an AI provider configured by the Service Provider, accessed through OpenRouter. The current provider may change as the Application is updated. All providers used are bound by API terms that prohibit using customer API data for model training. Entries are not transmitted to AI providers at any other time. The transmission only occurs when you explicitly tap "Generate AI reflection" or "Start deep dive." You can use the Application without ever using AI features. If you never request a reflection or deep dive, no journal data ever leaves your device.</p>
 
-- The relevant journal entries from the requested timeframe are transmitted to OpenRouter for processing.
-- Entries are not transmitted to AI providers at any other time. The transmission only occurs when you explicitly tap "Generate AI reflection" or "Start deep dive."
-- You can use the Application without ever using AI features. If you never request a reflection or deep dive, no journal data ever leaves your device.
+<h2>Analytics and Crash Reporting</h2>
 
-The Application uses an AI provider configured by the Service Provider, accessed through OpenRouter. The current provider may change as the Application is updated. All providers used are bound by API terms that prohibit using customer API data for model training.
+<p>The Application collects anonymized product analytics and crash reports to help the Service Provider improve the Application:</p>
 
-**Analytics and Crash Reporting**
+<ul>
+<li><strong>Product analytics (PostHog):</strong> anonymized event data about how the Application is used. This includes events like screen views, feature taps, onboarding step completion, paywall views, and subscription events. Events are associated with an anonymized subscription identifier (provided by RevenueCat) but never with your name, email, or any personally identifying information. Your journal entries, mood selections, and entry content are NEVER sent to PostHog.</li>
+<li><strong>Crash reporting (Sentry):</strong> automatic crash reports if the Application encounters an unexpected error. Crash reports include the technical context needed to fix the bug (stack trace, device model, OS version, app version) but never include journal content, mood data, or personally identifying information.</li>
+</ul>
 
-The Application collects anonymized product analytics and crash reports to help the Service Provider improve the Application:
+<p>Both services are configured to collect the minimum data needed to improve the Application. Neither service receives, stores, or processes your journal entries.</p>
 
-- **Product analytics (PostHog):** anonymized event data about how the Application is used. This includes events like screen views, feature taps, onboarding step completion, paywall views, and subscription events. Events are associated with an anonymized subscription identifier (provided by RevenueCat) but never with your name, email, or any personally identifying information. Your journal entries, mood selections, and entry content are NEVER sent to PostHog.
+<h2>Subscription Data</h2>
 
-- **Crash reporting (Sentry):** automatic crash reports if the Application encounters an unexpected error. Crash reports include the technical context needed to fix the bug (stack trace, device model, OS version, app version) but never include journal content, mood data, or personally identifying information.
+<p>The Application uses RevenueCat to manage subscriptions. RevenueCat may collect anonymized device identifiers and subscription transaction data necessary to verify your subscription status. RevenueCat does not receive your journal content. See RevenueCat's privacy policy for details on what they collect.</p>
 
-Both services are configured to collect the minimum data needed to improve the Application. Neither service receives, stores, or processes your journal entries.
+<h2>Third-Party Services</h2>
 
-**Subscription Data**
+<p>The Application uses the following third-party services that have their own privacy policies:</p>
+<ul>
+<li>Expo — application framework</li>
+<li>OpenRouter — AI request routing for Reflection and Deep Dive features</li>
+<li>PostHog — product analytics</li>
+<li>RevenueCat — subscription management</li>
+<li>Sentry — crash reporting</li>
+<li>Underlying AI providers accessed through OpenRouter, subject to change as the Application is updated.</li>
+</ul>
 
-The Application uses RevenueCat to manage subscriptions. RevenueCat may collect anonymized device identifiers and subscription transaction data necessary to verify your subscription status. RevenueCat does not receive your journal content. See RevenueCat's privacy policy for details on what they collect.
+<h2>Disclosure of Information</h2>
 
-**Third-Party Services**
+<p>The Service Provider does not store your journal data on its own servers and therefore cannot disclose it to third parties. The Service Provider may disclose limited subscription or contact information as required by law, such as to comply with a subpoena or similar legal process; or when the Service Provider believes in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</p>
 
-The Application uses the following third-party services that have their own privacy policies:
+<h2>Your Control Over Your Data</h2>
 
-- [Expo](https://expo.io/privacy) — application framework
-- [OpenRouter](https://openrouter.ai/privacy) — AI request routing for Reflection and Deep Dive features
-- [PostHog](https://posthog.com/privacy) — product analytics
-- [RevenueCat](https://www.revenuecat.com/privacy) — subscription management
-- [Sentry](https://sentry.io/privacy/) — crash reporting
-- Underlying AI providers accessed through OpenRouter, subject to change as the Application is updated.
+<p>Because all journal data is stored locally on your device, you have complete control:</p>
+<ul>
+<li>Delete individual entries at any time via the entry editor.</li>
+<li>Delete all data via Settings → Delete all data, which clears the local database immediately.</li>
+<li>Uninstall the Application, which removes all local data permanently.</li>
+</ul>
 
-**Disclosure of Information**
+<h2>Data Retention</h2>
 
-The Service Provider does not store your journal data on its own servers and therefore cannot disclose it to third parties. The Service Provider may disclose limited subscription or contact information:
+<p>Journal data is retained on your device until you delete it or uninstall the Application. The Service Provider does not retain copies of your journal data. AI processing partners retain data per their own retention policies (typically not retained beyond the duration needed to fulfill your request).</p>
 
-- as required by law, such as to comply with a subpoena or similar legal process;
-- when the Service Provider believes in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.
+<h2>Children</h2>
 
-**Your Control Over Your Data**
+<p>The Application is not intended for children under the age of 13. The Service Provider does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child under 13 has used the Application, please contact the Service Provider at forgedbyatlas@proton.me to discuss data deletion (note that all journal data is stored locally on the child's device and can be deleted by uninstalling the Application or using the in-app "Delete all data" option).</p>
 
-Because all journal data is stored locally on your device, you have complete control:
+<h2>Security</h2>
 
-- Delete individual entries at any time via the entry editor.
-- Delete all data via Settings → Delete all data, which clears the local database immediately.
-- Uninstall the Application, which removes all local data permanently.
+<p>The Service Provider takes reasonable measures to protect any data transmitted to AI processing partners, using HTTPS encryption for all network traffic. Your locally stored data is protected by your device's standard security mechanisms (including optional Lock if you enable it in Settings).</p>
 
-**Data Retention**
+<h2>International Users</h2>
 
-Journal data is retained on your device until you delete it or uninstall the Application. The Service Provider does not retain copies of your journal data. AI processing partners retain data per their own retention policies (typically not retained beyond the duration needed to fulfill your request).
+<p>If you are accessing the Application from outside the United States, please be aware that your data may be processed by AI partners whose servers may be located in the United States. By using AI features, you consent to this transfer. Anonymized analytics and crash data may also be processed by PostHog and Sentry on servers located outside your country, including in the United States. Users in the European Union have rights under GDPR including the right to access, correct, or delete personal data. Because all journal data is stored locally on your device, you can exercise these rights directly through the Application's data controls.</p>
 
-**Children**
+<h2>Changes</h2>
 
-The Application is not intended for children under the age of 13. The Service Provider does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child under 13 has used the Application, please contact the Service Provider at forgedbyatlas@proton.me to discuss data deletion (note that all journal data is stored locally on the child's device and can be deleted by uninstalling the Application or using the in-app "Delete all data" option).
+<p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this document within the Application. You are advised to consult this Privacy Policy regularly for any changes; continued use of the Application after changes are posted constitutes acceptance of those changes.</p>
 
-**Security**
+<p>This privacy policy is effective as of 2026-05-12.</p>
 
-The Service Provider takes reasonable measures to protect any data transmitted to AI processing partners, using HTTPS encryption for all network traffic. Your locally stored data is protected by your device's standard security mechanisms (including optional Lock if you enable it in Settings).
+<h2>Contact</h2>
 
-**International Users**
+<p>If you have any questions about this Privacy Policy or about the privacy practices of the Application, contact the Service Provider at <a href="mailto:forgedbyatlas@proton.me">forgedbyatlas@proton.me</a>.</p>
 
-If you are accessing the Application from outside the United States, please be aware that your data may be processed by AI partners whose servers may be located in the United States. By using AI features, you consent to this transfer. Anonymized analytics and crash data may also be processed by PostHog and Sentry on servers located outside your country, including in the United States. Users in the European Union have rights under GDPR including the right to access, correct, or delete personal data. Because all journal data is stored locally on your device, you can exercise these rights directly through the Application's data controls.
+<div class="footer">
+<p>Forged By Atlas · <a href="/confyde/support.html">Support</a></p>
+</div>
 
-**Changes**
-
-This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this document within the Application. You are advised to consult this Privacy Policy regularly for any changes; continued use of the Application after changes are posted constitutes acceptance of those changes.
-
-This privacy policy is effective as of 2026-05-12.
-
-**Contact**
-
-If you have any questions about this Privacy Policy or about the privacy practices of the Application, contact the Service Provider at forgedbyatlas@proton.me.`;
-
-export default function PrivacyPolicyScreen() {
-    const scheme = useColorScheme();
-    const dark = scheme === 'dark';
-    const colors = dark ? COLORS.dark : COLORS.light;
-    const router = useRouter();
-
-    const markdownStyles = {
-        body: {
-            color: colors.textPrimary,
-            fontFamily: FONT_FAMILY.regular,
-            fontSize: 17,
-            lineHeight: 24,
-        },
-        paragraph: {
-            marginTop: 0,
-            marginBottom: SPACING[3],
-        },
-        strong: {
-            fontFamily: FONT_FAMILY.semiBold,
-            color: colors.textPrimary,
-        },
-        bullet_list: {
-            marginBottom: SPACING[3],
-        },
-        ordered_list: {
-            marginBottom: SPACING[3],
-        },
-        list_item: {
-            marginBottom: SPACING[1],
-            flexDirection: 'row' as const,
-        },
-        bullet_list_icon: {
-            color: colors.textSecondary,
-            marginRight: SPACING[2],
-        },
-        link: {
-            color: colors.accent,
-            textDecorationLine: 'underline' as const,
-        },
-        hr: {
-            backgroundColor: colors.divider,
-            height: 1,
-            marginVertical: SPACING[3],
-        },
-    };
-
-    return (
-        <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => router.back()} hitSlop={12} accessibilityLabel="Back" accessibilityRole="button">
-                    <ChevronLeft size={24} color={colors.textSecondary} />
-                </TouchableOpacity>
-                <Text style={[TEXT_STYLE.button, { color: colors.textPrimary }]}>Privacy Policy</Text>
-                <View style={{ width: 24 }} />
-            </View>
-
-            <ScrollView contentContainerStyle={styles.scroll}>
-                <Markdown style={markdownStyles}>{PLACEHOLDER_BODY}</Markdown>
-            </ScrollView>
-        </SafeAreaView>
-    );
-}
-
-const styles = StyleSheet.create({
-    safe: { flex: 1 },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingHorizontal: SPACING[4],
-        paddingTop: SPACING[4],
-        paddingBottom: SPACING[3],
-    },
-    scroll: {
-        paddingHorizontal: SPACING[4],
-        paddingVertical: SPACING[6],
-        paddingBottom: SPACING[12],
-    },
-});
+</body>
+</html>
